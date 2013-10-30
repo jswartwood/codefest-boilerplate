@@ -1,13 +1,17 @@
+var routes = [
+      "user",
+      "thing"
+    ];
 
-/*
- * GET home page.
- */
-
-exports.index = function( req, res ) {
-  res.render('index', {});
+exports.configure = function( opts ) {
+  config.app = opts.app;
+  config.models = opts.models;
 };
 
-exports.partials = function( req, res ) {
-  var name = req.params.name;
-  res.render('ng_partials/' + name);
+exports.init = function( opts ) {
+  if (opts) exports.configure(opts);
+
+  routes.forEach(function( routeName ) {
+    require("./" + routeName).setup(config);
+  });
 };

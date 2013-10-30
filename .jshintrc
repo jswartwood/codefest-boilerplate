@@ -1,6 +1,4 @@
 {
   "browser": true,
-  "globals": {
-    "angular": true
-  }
+  "node": true
 }

@@ -1,4 +1,22 @@
 extends layout
 
+block js
+  script(src="//login.persona.org/include.js")
+  script(src="/js/login.js")
+
 block content
-  include ng_partials/index
+  h1 Chat!
+
+  p
+    a(id="browserid", title="Sign-in with BrowserID")
+      img(src="//developer.mozilla.org/files/3963/persona_sign_in_blue.png", alt="Sign in")
+
+  p
+    a(href="/chat/auth/facebook") Sign in with Facebook
+
+  p
+    a(href="/chat/auth/google") Sign in with Google
+
+  p
+    a(href="/chat/auth/twitter") Sign in with Twitter
+

@@ -1,6 +1,6 @@
 var mongoose = require("mongoose");
 
-var config = require("../config/mongo/" + (process.env.NODE_ENV || "development") + ".json");
+var config = require("../config/mongo/" + (process.env.NODE_ENV || "development"));
 
 mongoose.connect("mongodb://" + config.host + ":" + config.port + "/" + config.name, { user: config.user, pass: config.pass });
 
